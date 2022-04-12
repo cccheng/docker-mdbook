@@ -26,6 +26,9 @@ RUN apk del wget ca-certificates
 COPY --from=builder /usr/local/bin/mdbook* /usr/bin/
 COPY plantuml /usr/bin/
 
+WORKDIR /data
+VOLUME ["/data"]
+
 ENTRYPOINT ["/usr/bin/mdbook"]
 CMD []
 
